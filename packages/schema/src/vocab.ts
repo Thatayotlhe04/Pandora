@@ -82,6 +82,16 @@ const nubia: SourceVocab = {
     query: z.string(),
     resultCount: z.number().int().nonnegative(),
   }),
+  'public_corpus.sentence_pair': z.object({
+    sourceId: z.string(),
+    sourceUrl: z.string().url(),
+    license: z.string(),
+    upstream: z.string().optional(),
+    rowIndex: z.number().int().nonnegative(),
+    languagePair: z.tuple([z.string(), z.string()]),
+    en: z.string(),
+    tn: z.string(),
+  }),
   ...aiEvents, // the AI inside Nubia
 };
 

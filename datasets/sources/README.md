@@ -16,6 +16,9 @@ must be able to prove where every row came from.
   alignment for Heisenberg/Atlas.
 - Import posture: approved candidate. Fork or mirror the dataset in a controlled
   data bucket before funneling records into Pandora.
+- Import command: `node scripts/import-public-corpus.mjs --limit 5` previews
+  signed `public_corpus.sentence_pair` events; add `--live --endpoint ... --key
+  ... --secret ...` to ingest a controlled slice through Pandora.
 
 ### Setswana sentiment
 

@@ -97,6 +97,24 @@ opt-out basis, sources, types, time range, counts, schema versions, and a SHA-25
 content hash. `product_improvement` cuts require `--internal` and are stamped
 non-distributable.
 
+Public Setswana data can be funneled through the same signed path after a source
+manifest is approved. Start with a dry run:
+
+```bash
+node scripts/import-public-corpus.mjs --limit 5
+```
+
+Then ingest a controlled slice with a Nubia Pandora key:
+
+```bash
+node scripts/import-public-corpus.mjs --live \
+  --endpoint https://pandora.example \
+  --key pk_nubia_xxx \
+  --secret "$PANDORA_SECRET" \
+  --source nubia \
+  --limit 1000
+```
+
 ## Efficiency
 
 The runtime path is lean where leanness is throughput and cost:
