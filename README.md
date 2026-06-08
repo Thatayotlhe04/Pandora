@@ -196,7 +196,8 @@ locally:
 python3 -m http.server 4173 --directory site
 ```
 
-GitHub Pages deploys `site/` through `.github/workflows/pages.yml`.
+GitHub Pages can deploy `site/` through `.github/workflows/pages.yml` after the
+repo's Pages source is enabled for GitHub Actions.
 
 ## Deployment note
 
