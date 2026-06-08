@@ -1,0 +1,23 @@
+{
+  "sourceId": "hf-michsethowusu-english-setswana-mt560",
+  "name": "English-Setswana sentence pairs MT560",
+  "languageTags": ["en", "tn"],
+  "sourceUrl": "https://huggingface.co/datasets/michsethowusu/english-setswana_sentence-pairs_mt560",
+  "upstream": "OPUS MT560",
+  "license": "CC BY 4.0",
+  "rowsReported": 780798,
+  "intendedUse": [
+    "translation training",
+    "Setswana language capture evaluation",
+    "multilingual instruction tuning"
+  ],
+  "pandoraScope": "model_training",
+  "distributableCandidate": true,
+  "importStatus": "candidate_source_manifest",
+  "requiredAttribution": [
+    "Dataset: michsethowusu/english-setswana_sentence-pairs_mt560",
+    "Original source: OPUS MT560",
+    "License: Creative Commons Attribution 4.0 International"
+  ],
+  "notes": "Fork or mirror before import so Pandora keeps a stable source-of-truth snapshot."
+}

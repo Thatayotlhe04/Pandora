@@ -1,0 +1,26 @@
+{
+  "name": "pandora",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @pandora/schema && npm run build -w @pandora/core && npm run build -w @pandora/tracker",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "start:ingestion": "npm run start -w @pandora/ingestion",
+    "start:worker": "npm run start -w @pandora/worker",
+    "dev:ingestion": "npm run dev -w @pandora/ingestion",
+    "dev:worker": "npm run dev -w @pandora/worker"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  },
+  "overrides": {
+    "ioredis": "5.10.1"
+  }
+}
