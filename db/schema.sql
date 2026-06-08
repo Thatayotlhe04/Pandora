@@ -67,12 +67,15 @@ select distinct on (source, user_id, scope)
 from consent
 order by source, user_id, scope, created_at desc;
 
+alter view current_consent set (security_invoker = true);
+
 -- Back resolveConsent() in a source backend: select granted_scopes('nubia','u_123')
 -- No consent row means allowed by default; the latest revoke removes a scope.
 create or replace function granted_scopes(p_source text, p_user_id text)
 returns text[]
 language sql
 stable
+set search_path = public, pg_temp
 as $$
   with all_scopes(scope) as (
     values ('product_improvement'::text), ('model_training'::text)
@@ -85,6 +88,9 @@ as $$
    and c.scope = s.scope
   where coalesce(c.granted, true)
 $$;
+
+revoke execute on function granted_scopes(text, text) from public, anon, authenticated;
+grant execute on function granted_scopes(text, text) to service_role;
 
 -- ── api_keys: per-source ingestion credentials ──────────────────────────
 create table if not exists api_keys (
@@ -134,3 +140,33 @@ alter table rejections enable row level security;
 alter table consent    enable row level security;
 alter table api_keys   enable row level security;
 alter table datasets   enable row level security;
+
+drop policy if exists "No client access" on events;
+create policy "No client access" on events
+  for all to anon, authenticated
+  using (false)
+  with check (false);
+
+drop policy if exists "No client access" on rejections;
+create policy "No client access" on rejections
+  for all to anon, authenticated
+  using (false)
+  with check (false);
+
+drop policy if exists "No client access" on consent;
+create policy "No client access" on consent
+  for all to anon, authenticated
+  using (false)
+  with check (false);
+
+drop policy if exists "No client access" on api_keys;
+create policy "No client access" on api_keys
+  for all to anon, authenticated
+  using (false)
+  with check (false);
+
+drop policy if exists "No client access" on datasets;
+create policy "No client access" on datasets
+  for all to anon, authenticated
+  using (false)
+  with check (false);
