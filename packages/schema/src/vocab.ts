@@ -92,6 +92,22 @@ const nubia: SourceVocab = {
     en: z.string(),
     tn: z.string(),
   }),
+  'public_corpus.record': z.object({
+    sourceId: z.string(),
+    sourceName: z.string(),
+    sourceUrl: z.string().url(),
+    license: z.string(),
+    licenseUrl: z.string().url().optional(),
+    licenseStatus: z.string(),
+    rowIndex: z.number().int().nonnegative(),
+    languageTags: z.array(z.string()).min(1),
+    modalities: z.array(z.string()).min(1),
+    task: z.string(),
+    split: z.string().optional(),
+    config: z.string().optional(),
+    attribution: z.record(z.string(), z.unknown()).optional(),
+    payload: z.record(z.string(), z.unknown()),
+  }),
   ...aiEvents, // the AI inside Nubia
 };
 

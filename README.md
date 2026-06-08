@@ -97,22 +97,39 @@ opt-out basis, sources, types, time range, counts, schema versions, and a SHA-25
 content hash. `product_improvement` cuts require `--internal` and are stamped
 non-distributable.
 
-Public Setswana data can be funneled through the same signed path after a source
-manifest is approved. Start with a dry run:
+Public African-language data can be funneled through the same signed path after
+a source manifest is approved. The registry lives at
+`datasets/sources/african-open-corpora.json` and separates importable open
+sources from research-only, share-alike, gated, unknown-license, and
+evaluation-only sources.
+
+Refresh discovery candidates:
 
 ```bash
-node scripts/import-public-corpus.mjs --limit 5
+npm run discover:corpora -- --limit 30
+```
+
+List catalogued sources:
+
+```bash
+npm run import:corpora -- --list
+```
+
+Start with a dry run across approved sources:
+
+```bash
+npm run import:corpora -- --all --limit-per-source 2
 ```
 
 Then ingest a controlled slice with a Nubia Pandora key:
 
 ```bash
-node scripts/import-public-corpus.mjs --live \
+npm run import:corpora -- --all --live \
   --endpoint https://pandora.example \
   --key pk_nubia_xxx \
   --secret "$PANDORA_SECRET" \
   --source nubia \
-  --limit 1000
+  --limit-per-source 1000
 ```
 
 ## Efficiency
@@ -140,7 +157,8 @@ services/
   datasets/  dataset builder CLI (provenance-stamped, grouped JSONL → R2)
 db/
   schema.sql events, rejections, consent, api_keys, datasets, view, function
-scripts/     mint-key.mjs, send-test.mjs
+scripts/     mint-key.mjs, send-test.mjs, corpus discovery/import
+site/        Pandora landing page deployed by GitHub Pages
 INTEGRATION.md  how to embed the SDK on each platform (start here for wiring)
 ```
 
@@ -167,6 +185,18 @@ INTEGRATION.md  how to embed the SDK on each platform (start here for wiring)
    node scripts/send-test.mjs http://localhost:8787 pk_nubia_xxx <secret> nubia
    ```
 7. **Embed the SDK** on each platform — see `INTEGRATION.md`.
+
+## Landing page
+
+The Pandora marketing site is a static app in `site/` with Gaborone visuals,
+animated corpus demos, API/SDK sections, and Privacy/Terms pages. Preview it
+locally:
+
+```bash
+python3 -m http.server 4173 --directory site
+```
+
+GitHub Pages deploys `site/` through `.github/workflows/pages.yml`.
 
 ## Deployment note
 

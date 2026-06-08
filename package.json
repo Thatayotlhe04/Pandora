@@ -13,7 +13,9 @@
     "start:ingestion": "npm run start -w @pandora/ingestion",
     "start:worker": "npm run start -w @pandora/worker",
     "dev:ingestion": "npm run dev -w @pandora/ingestion",
-    "dev:worker": "npm run dev -w @pandora/worker"
+    "dev:worker": "npm run dev -w @pandora/worker",
+    "discover:corpora": "node scripts/discover-hf-corpora.mjs",
+    "import:corpora": "node scripts/import-public-corpus.mjs"
   },
   "devDependencies": {
     "@types/node": "^20.14.12",

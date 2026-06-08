@@ -1,41 +1,89 @@
 # Public Language Data Sources
 
-Pandora can ingest public language data only after a source manifest records the
-license, provenance, intended use, and attribution requirements. Do not mix public
-corpora into the live event lake without a manifest; downstream dataset builds
-must be able to prove where every row came from.
+Pandora can ingest public African-language data only when a source manifest
+records license, provenance, intended use, and attribution requirements. The
+current registry is `african-open-corpora.json`.
 
-## Approved Candidate Sources
+## Import Posture
 
-### Setswana parallel text
+The importer is deliberately conservative:
 
-- Source: `michsethowusu/english-setswana_sentence-pairs_mt560`
-- URL: `https://huggingface.co/datasets/michsethowusu/english-setswana_sentence-pairs_mt560`
-- License: CC BY 4.0
-- Use: translation examples, multilingual instruction tuning, Setswana/English
-  alignment for Heisenberg/Atlas.
-- Import posture: approved candidate. Fork or mirror the dataset in a controlled
-  data bucket before funneling records into Pandora.
-- Import command: `node scripts/import-public-corpus.mjs --limit 5` previews
-  signed `public_corpus.sentence_pair` events; add `--live --endpoint ... --key
-  ... --secret ...` to ingest a controlled slice through Pandora.
+- `approved` + `approvedForModelTraining: true` + `adapter: "hf_rows"` flows into
+  Pandora with `scope: "model_training"`.
+- `candidate_review`, `share_alike_review`, `evaluation_only`, and `restricted`
+  stay visible in the registry but are not imported by default.
+- Non-commercial, no-derivatives, unknown, gated use-restricted, or
+  evaluation-only sources must not enter saleable/distributable Atlas cuts.
 
-### Setswana sentiment
+## Commands
 
-- Source: `dsfsi/setswana-sentiment`
-- URL: `https://huggingface.co/datasets/dsfsi/setswana-sentiment`
-- License: CC BY 4.0
-- Use: sentiment/classification evaluation and lightweight Setswana benchmark
-  data.
-- Import posture: approved candidate. Preserve the dataset citation and
-  annotator/provenance metadata.
+List every catalogued source and its posture:
 
-## Import Rules
+```bash
+node scripts/import-public-corpus.mjs --list
+```
 
-1. Mirror or fork the dataset first; never depend on a mutable remote as the only
-   source of truth.
-2. Keep attribution metadata with every import batch.
+Dry-run all importable sources with two rows per source:
+
+```bash
+node scripts/import-public-corpus.mjs --all --limit-per-source 2
+```
+
+Dry-run one source:
+
+```bash
+node scripts/import-public-corpus.mjs \
+  --source-id hf-michsethowusu-english-setswana-mt560 \
+  --limit 5
+```
+
+Live ingest, after a Pandora key is minted for the target source:
+
+```bash
+node scripts/import-public-corpus.mjs --all --live \
+  --endpoint https://pandora.example \
+  --key pk_nubia_xxx \
+  --secret "$PANDORA_SECRET" \
+  --source nubia \
+  --limit-per-source 1000
+```
+
+Refresh Hugging Face discovery candidates:
+
+```bash
+node scripts/discover-hf-corpora.mjs --limit 30
+```
+
+## Currently Importable
+
+- English-Setswana OPUS MT560 mirror, CC BY 4.0.
+- AfriSenti Classification slices for Hausa, Yoruba, Swahili, and Kinyarwanda,
+  CC BY 4.0.
+- Swahili News classification corpus, CC BY 4.0.
+- NCHLT Setswana and Sepedi speech transcript slices, CC BY 3.0.
+- Xhosa and Yoruba speech transcript slices, CC BY 3.0 / CC BY 4.0.
+- Igbo-English translation corpus, Apache 2.0.
+- African UltraChat, MIT.
+
+## Important Holds
+
+- Common Voice is CC0, but the active download flow now lives on Mozilla Data
+  Collective; mirror a release with version metadata before importing.
+- African Next Voices is CC BY 4.0, but it is gated and explicitly restricted
+  against TTS/voice cloning/voice synthesis. Use for ASR only after review.
+- FLORES+ is CC BY-SA 4.0 and useful for evaluation, but its dataset card says
+  it should not be used as training data.
+- Wikimedia dumps and Tatoeba can be useful, but attribution and share-alike
+  obligations must travel with any derivative dataset.
+- MasakhaNER is non-commercial; keep it out of external/saleable Pandora cuts.
+- DSFSI Setswana Sentiment is currently held because the live dataset card shows
+  NOODL/other despite older metadata indicating CC BY.
+
+## Rules
+
+1. Mirror or fork approved datasets before high-volume ingestion.
+2. Keep attribution metadata with every imported row.
 3. Mark public-corpus rows separately from platform-user events.
 4. Build distributable cuts only from rows whose source license allows that use.
-5. If a license is unclear, non-commercial, or no-derivatives, hold it out of
-   saleable datasets until reviewed.
+5. If a license is unclear, non-commercial, no-derivatives, share-alike, gated,
+   or evaluation-only, hold it out until reviewed.

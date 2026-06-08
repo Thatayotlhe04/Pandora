@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Pandora is the African-language data spine for trustworthy model training, SDK ingestion, provenance, and opt-out governance."
+    />
+    <title>Pandora - African Language Data Infrastructure</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand-pill" href="#top" aria-label="Pandora home">
+        <span class="brand-mark">P</span>
+        <span>Pandora</span>
+      </a>
+      <nav class="nav-pill" aria-label="Primary">
+        <a href="#data">Data</a>
+        <a href="#platform">Platform</a>
+        <a href="#api">API</a>
+        <a href="#mission">Mission</a>
+      </nav>
+      <a class="header-action" href="#demo">View Demo</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Pandora overview">
+        <img class="hero-image" src="./assets/gaborone-aerial.jpg" alt="Gaborone skyline at dusk" />
+        <div class="hero-shade"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">African-language data spine</p>
+          <h1>Pandora</h1>
+          <p class="hero-lede">
+            A high-throughput SDK, consent-aware event lake, and provenance layer
+            for building Atlas from African language signal.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#data">Explore the corpus</a>
+            <a class="button ghost" href="#api">Read the API</a>
+          </div>
+        </div>
+        <div class="signal-strip" aria-label="Live platform signals">
+          <div>
+            <span class="metric" data-count="12">0</span>
+            <span>approved open lanes</span>
+          </div>
+          <div>
+            <span class="metric" data-count="24">0</span>
+            <span>catalogued sources</span>
+          </div>
+          <div>
+            <span class="metric" data-count="5">0</span>
+            <span>platform SDKs</span>
+          </div>
+          <div>
+            <span class="metric" data-count="100">0</span>
+            <span>opt-out enforced</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Corpus stream">
+        <div class="ticker-track">
+          <span>Setswana MT560</span>
+          <span>AfriSenti Hausa</span>
+          <span>Yoruba ASR transcripts</span>
+          <span>Swahili news</span>
+          <span>Igbo translation</span>
+          <span>NCHLT Setswana</span>
+          <span>African UltraChat</span>
+          <span>Kinyarwanda review lane</span>
+          <span>Common Voice mirror lane</span>
+          <span>Wikimedia share-alike review</span>
+        </div>
+      </section>
+
+      <section id="data" class="section data-section">
+        <div class="section-kicker">Corpus Atlas</div>
+        <div class="section-heading">
+          <h2>Open African-language data, routed with provenance intact.</h2>
+          <p>
+            Pandora distinguishes importable open corpora from research-only,
+            share-alike, gated, and evaluation-only datasets before anything
+            enters the saleable `model_training` lake.
+          </p>
+        </div>
+
+        <div class="source-grid">
+          <article class="source-card accent-green">
+            <span>Translation</span>
+            <h3>Setswana, Igbo, Kinyarwanda</h3>
+            <p>Parallel text lanes with row-level source IDs, license tags, and upstream citations.</p>
+          </article>
+          <article class="source-card accent-blue">
+            <span>Sentiment</span>
+            <h3>Hausa, Yoruba, Swahili</h3>
+            <p>Classification rows imported as generic public-corpus records for downstream benchmarks.</p>
+          </article>
+          <article class="source-card accent-amber">
+            <span>Speech</span>
+            <h3>Setswana, Sepedi, Xhosa, Yoruba</h3>
+            <p>Transcript-first ASR lanes, ready for audio mirroring when a stable storage bucket is assigned.</p>
+          </article>
+          <article class="source-card accent-rose">
+            <span>Governance</span>
+            <h3>Restricted sources held out</h3>
+            <p>Evaluation-only, non-commercial, and no-derivatives sources remain catalogued but quarantined.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo-section">
+        <div class="section-kicker">Live Capture Flow</div>
+        <div class="demo-layout">
+          <div class="demo-copy">
+            <h2>Language capture built for Nubia and Heisenberg AI.</h2>
+            <p>
+              Raw Setswana input is logged first under `model_training`, Gemini
+              translates and responds, and Pandora logs the output before the
+              learner sees the response.
+            </p>
+            <div class="pill-row" aria-label="Capture safeguards">
+              <span>Silent SDK capture</span>
+              <span>Default opt-in</span>
+              <span>Instant opt-out</span>
+              <span>Row provenance</span>
+            </div>
+          </div>
+
+          <div class="demo-player capture-player" aria-label="Animated language capture demo">
+            <div class="player-topbar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>nubia.capture.flow</strong>
+            </div>
+            <div class="flow-stage">
+              <div class="flow-node user-node">User speaks or types Setswana</div>
+              <div class="flow-arrow"></div>
+              <div class="flow-node pandora-node">Pandora logs raw input</div>
+              <div class="flow-arrow"></div>
+              <div class="flow-node model-node">Gemini translates and responds</div>
+              <div class="flow-arrow"></div>
+              <div class="flow-node pandora-node">Pandora logs model output</div>
+              <div class="flow-arrow"></div>
+              <div class="flow-node user-node">User receives answer</div>
+            </div>
+            <div class="playbar"><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platform" class="section platform-section">
+        <img class="platform-image" src="./assets/gaborone-cbd-night.jpg" alt="Gaborone CBD at night" />
+        <div class="section-kicker">Platform</div>
+        <div class="section-heading light">
+          <h2>One SDK across the whole portfolio.</h2>
+          <p>
+            Monolith, Nubia, Nimbus, PrimeDrive, and Prototype emit signed,
+            idempotent events into one queue, one hot store, and one cold lake.
+          </p>
+        </div>
+        <div class="pipeline" aria-label="Pandora pipeline">
+          <div class="pipeline-step active">
+            <span>01</span>
+            <strong>SDK</strong>
+            <p>Opt-out check, batch, HMAC sign.</p>
+          </div>
+          <div class="pipeline-step">
+            <span>02</span>
+            <strong>Ingest</strong>
+            <p>Zod validation and source auth.</p>
+          </div>
+          <div class="pipeline-step">
+            <span>03</span>
+            <strong>Lake</strong>
+            <p>Supabase hot path, R2 cold path.</p>
+          </div>
+          <div class="pipeline-step">
+            <span>04</span>
+            <strong>Atlas</strong>
+            <p>Versioned cuts with provenance.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="api" class="section api-section">
+        <div class="section-kicker">API and SDK Kit</div>
+        <div class="api-layout">
+          <div>
+            <h2>Signed ingestion for events, corpora, and model loops.</h2>
+            <p>
+              The same endpoint handles user events, public corpus rows, and
+              AI feedback. Every dataset cut can prove source, scope, license,
+              schema version, and opt-out basis.
+            </p>
+            <div class="api-buttons">
+              <a class="button primary dark" href="https://github.com/Thatayotlhe04/Pandora#readme">Documentation</a>
+              <a class="button ghost dark" href="https://github.com/Thatayotlhe04/Pandora/blob/main/INTEGRATION.md">SDK Kit</a>
+            </div>
+          </div>
+          <pre class="code-panel" aria-label="Pandora import command"><code>node scripts/import-public-corpus.mjs --all --live \
+  --endpoint https://pandora.example \
+  --key pk_nubia_xxx \
+  --secret "$PANDORA_SECRET" \
+  --source nubia \
+  --limit-per-source 1000</code></pre>
+        </div>
+      </section>
+
+      <section class="section motion-section" aria-label="Animated product demos">
+        <div class="section-kicker">Demo Reels</div>
+        <div class="reel-grid">
+          <article class="demo-reel">
+            <div class="reel-screen corpus-screen">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <h3>Corpus intake</h3>
+            <p>License-filtered rows stream into Pandora with source-level attribution.</p>
+          </article>
+          <article class="demo-reel">
+            <div class="reel-screen model-screen">
+              <span></span><span></span><span></span>
+            </div>
+            <h3>Model loop</h3>
+            <p>Query, response, and reward signal stay reconstructable by conversation.</p>
+          </article>
+          <article class="demo-reel">
+            <div class="reel-screen opt-screen">
+              <span></span><span></span><span></span>
+            </div>
+            <h3>Opt-out enforcement</h3>
+            <p>Users can leave `model_training`; SDK and ingestion both respect the boundary.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="mission" class="section mission-section">
+        <div class="mission-copy">
+          <div class="section-kicker">Mission</div>
+          <h2>Build the model Africa deserves, with the proof trail it needs.</h2>
+          <p>
+            Pandora turns scattered language signal into defensible training
+            assets: consent-scoped, attribution-preserved, and ready for Atlas.
+          </p>
+        </div>
+        <a class="button primary" href="#top">Back to top</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="brand-mark">P</span>
+        <strong>Pandora</strong>
+        <p>Provenance-first African-language data infrastructure.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="https://github.com/Thatayotlhe04/Pandora#readme">Documentation</a>
+        <a href="#api">API</a>
+        <a href="https://github.com/Thatayotlhe04/Pandora/blob/main/INTEGRATION.md">SDK Kit</a>
+        <a href="#mission">Mission</a>
+        <a href="mailto:careers@pandora.local">Careers</a>
+      </div>
+      <p class="copyright">2026 Pandora. Built in Gaborone.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

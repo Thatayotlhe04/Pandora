@@ -1,0 +1,571 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-09",
+  "policy": {
+    "scope": "model_training",
+    "defaultImportRule": "Only sources with status=approved, approvedForModelTraining=true, and adapter=hf_rows are imported by scripts/import-public-corpus.mjs.",
+    "distributionRule": "External distribution requires license-compatible attribution, preserved provenance, and exclusion of restricted/evaluation-only sources.",
+    "restrictedRule": "Non-commercial, no-derivatives, unknown, gated use-restricted, and evaluation-only datasets are catalogued but not imported automatically."
+  },
+  "sources": [
+    {
+      "id": "hf-michsethowusu-english-setswana-mt560",
+      "name": "English-Setswana Parallel Dataset (OPUS MT560 mirror)",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "michsethowusu/english-setswana_sentence-pairs_mt560",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/michsethowusu/english-setswana_sentence-pairs_mt560",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["en", "tn"],
+      "modalities": ["text"],
+      "task": "parallel_translation",
+      "fields": {
+        "include": ["eng", "tsn"]
+      },
+      "attribution": {
+        "publisher": "michsethowusu",
+        "upstream": "OPUS MT560",
+        "citation": "Cite the original OPUS MT560 source and Hugging Face dataset card."
+      }
+    },
+    {
+      "id": "hf-mteb-afrisenti-hau",
+      "name": "AfriSenti Classification - Hausa",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "mteb/AfriSentiClassification",
+      "config": "hau",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/mteb/AfriSentiClassification",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["ha"],
+      "modalities": ["text"],
+      "task": "sentiment_classification",
+      "fields": {
+        "include": ["text", "label"]
+      },
+      "attribution": {
+        "publisher": "Massive Text Embedding Benchmark",
+        "upstream": "AfriSenti"
+      }
+    },
+    {
+      "id": "hf-mteb-afrisenti-yor",
+      "name": "AfriSenti Classification - Yoruba",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "mteb/AfriSentiClassification",
+      "config": "yor",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/mteb/AfriSentiClassification",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["yo"],
+      "modalities": ["text"],
+      "task": "sentiment_classification",
+      "fields": {
+        "include": ["text", "label"]
+      },
+      "attribution": {
+        "publisher": "Massive Text Embedding Benchmark",
+        "upstream": "AfriSenti"
+      }
+    },
+    {
+      "id": "hf-mteb-afrisenti-swa",
+      "name": "AfriSenti Classification - Swahili",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "mteb/AfriSentiClassification",
+      "config": "swa",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/mteb/AfriSentiClassification",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["sw"],
+      "modalities": ["text"],
+      "task": "sentiment_classification",
+      "fields": {
+        "include": ["text", "label"]
+      },
+      "attribution": {
+        "publisher": "Massive Text Embedding Benchmark",
+        "upstream": "AfriSenti"
+      }
+    },
+    {
+      "id": "hf-mteb-afrisenti-kin",
+      "name": "AfriSenti Classification - Kinyarwanda",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "mteb/AfriSentiClassification",
+      "config": "kin",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/mteb/AfriSentiClassification",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["rw"],
+      "modalities": ["text"],
+      "task": "sentiment_classification",
+      "fields": {
+        "include": ["text", "label"]
+      },
+      "attribution": {
+        "publisher": "Massive Text Embedding Benchmark",
+        "upstream": "AfriSenti"
+      }
+    },
+    {
+      "id": "hf-community-swahili-news",
+      "name": "Swahili News Classification",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "community-datasets/swahili_news",
+      "config": "swahili_news",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/community-datasets/swahili_news",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["sw"],
+      "modalities": ["text"],
+      "task": "news_classification",
+      "fields": {
+        "include": ["text", "label"]
+      },
+      "attribution": {
+        "publisher": "community-datasets",
+        "upstream": "Swahili news classification corpus"
+      }
+    },
+    {
+      "id": "hf-max5ive-nchlt-speech-setswana",
+      "name": "NCHLT Speech - Setswana transcript slice",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "Max5ive/nchlt_speech_setswana",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/Max5ive/nchlt_speech_setswana",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "languages": ["tn"],
+      "modalities": ["text", "audio_metadata"],
+      "task": "asr_transcript",
+      "fields": {
+        "include": ["text", "duration", "utterance_id", "split"]
+      },
+      "attribution": {
+        "publisher": "Max5ive",
+        "upstream": "NCHLT speech resources"
+      },
+      "notes": [
+        "The importer stores transcripts and stable metadata only; Hugging Face cached audio URLs are ephemeral and should be mirrored separately if ASR audio training is needed."
+      ]
+    },
+    {
+      "id": "hf-michsethowusu-yoruba-speech-text",
+      "name": "Yoruba Speech-Text Parallel Dataset - transcript slice",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "michsethowusu/yoruba-speech-text-parallel",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/michsethowusu/yoruba-speech-text-parallel",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["yo"],
+      "modalities": ["text", "audio_metadata"],
+      "task": "asr_transcript",
+      "fields": {
+        "include": ["text"]
+      },
+      "attribution": {
+        "publisher": "michsethowusu",
+        "upstream": "Yoruba speech-text parallel dataset"
+      },
+      "notes": [
+        "Import transcripts first; mirror audio from the upstream repository before audio-model training."
+      ]
+    },
+    {
+      "id": "hf-max5ive-nchlt-speech-sepedi",
+      "name": "NCHLT Speech - Sepedi transcript slice",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "Max5ive/nchlt_speech_sepedi",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/Max5ive/nchlt_speech_sepedi",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "languages": ["nso"],
+      "modalities": ["text", "audio_metadata"],
+      "task": "asr_transcript",
+      "fields": {
+        "include": ["text", "duration", "utterance_id", "split"]
+      },
+      "attribution": {
+        "publisher": "Max5ive",
+        "upstream": "NCHLT speech resources"
+      },
+      "notes": [
+        "The importer stores transcripts and stable metadata only; Hugging Face cached audio URLs are ephemeral and should be mirrored separately if ASR audio training is needed."
+      ]
+    },
+    {
+      "id": "hf-wjbmattingly-xhosa-merged-audio",
+      "name": "Xhosa Merged Audio - transcript slice",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "wjbmattingly/xhosa_merged_audio",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/wjbmattingly/xhosa_merged_audio",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "languages": ["xh"],
+      "modalities": ["text", "audio_metadata"],
+      "task": "asr_transcript",
+      "fields": {
+        "include": ["transcription", "duration"]
+      },
+      "attribution": {
+        "publisher": "wjbmattingly"
+      },
+      "notes": [
+        "Import transcripts first; mirror audio from the upstream repository before audio-model training."
+      ]
+    },
+    {
+      "id": "hf-iamwille-igbo-translation",
+      "name": "Igbo-English Machine Translation",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "iamwille/igbo-translation",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/iamwille/igbo-translation",
+      "license": "Apache 2.0",
+      "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+      "languages": ["en", "ig"],
+      "modalities": ["text"],
+      "task": "parallel_translation",
+      "fields": {
+        "include": ["English", "Igbo"]
+      },
+      "attribution": {
+        "publisher": "iamwille"
+      }
+    },
+    {
+      "id": "hf-masakhane-african-ultrachat",
+      "name": "African UltraChat",
+      "status": "approved",
+      "approvedForModelTraining": true,
+      "allowedDistribution": "external_with_attribution",
+      "adapter": "hf_rows",
+      "dataset": "masakhane/african-ultrachat",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/masakhane/african-ultrachat",
+      "license": "MIT",
+      "licenseUrl": "https://opensource.org/license/mit/",
+      "languages": ["am", "ha", "ig", "rw", "st", "sn", "so", "sw", "xh", "yo", "zu"],
+      "modalities": ["text"],
+      "task": "instruction_dialogue",
+      "fields": {
+        "include": ["prompt", "prompt_id", "messages"]
+      },
+      "attribution": {
+        "publisher": "Masakhane"
+      },
+      "notes": [
+        "Synthetic/instruction data should be tagged separately from human-origin platform data in downstream dataset cards."
+      ]
+    },
+    {
+      "id": "hf-davis-swahili-tweet-sentiment",
+      "name": "Swahili Tweet Sentiment",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "social_platform_terms_review",
+      "adapter": "hf_rows",
+      "dataset": "Davis/Swahili-tweet-sentiment",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/Davis/Swahili-tweet-sentiment",
+      "license": "MIT as shown on dataset card",
+      "licenseUrl": "https://opensource.org/license/mit/",
+      "languages": ["sw"],
+      "modalities": ["text"],
+      "task": "sentiment_classification",
+      "fields": {
+        "include": ["Tweets", "Labels"]
+      },
+      "attribution": {
+        "publisher": "Davis"
+      },
+      "notes": [
+        "Hold until source collection method and social-platform redistribution terms are checked."
+      ]
+    },
+    {
+      "id": "hf-henok-amharic-qa",
+      "name": "Amharic QA",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "source_provenance_review",
+      "adapter": "hf_rows",
+      "dataset": "Henok/amharic-qa",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/Henok/amharic-qa",
+      "license": "MIT as shown on dataset card",
+      "licenseUrl": "https://opensource.org/license/mit/",
+      "languages": ["am"],
+      "modalities": ["text"],
+      "task": "question_answering",
+      "fields": {
+        "include": ["inputs", "targets"]
+      },
+      "attribution": {
+        "publisher": "Henok"
+      },
+      "notes": [
+        "Hold until the context passages' upstream source license is verified."
+      ]
+    },
+    {
+      "id": "mozilla-common-voice-african-locales",
+      "name": "Mozilla Common Voice African language locales",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "manual_mirror_required",
+      "adapter": "manual",
+      "sourceUrl": "https://commonvoice.mozilla.org/en/datasets",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "languages": ["af", "am", "ha", "ig", "rw", "tn", "sw", "xh", "yo", "zu"],
+      "modalities": ["audio", "text"],
+      "task": "asr_transcript",
+      "attribution": {
+        "publisher": "Mozilla Common Voice"
+      },
+      "notes": [
+        "Mozilla moved Common Voice downloads to Mozilla Data Collective; use their current access flow and preserve release/version metadata before importing."
+      ]
+    },
+    {
+      "id": "hf-dsfsi-anv-za-african-next-voices",
+      "name": "Swivuriso: ZA-African Next Voices",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "asr_only_with_use_restrictions",
+      "adapter": "manual",
+      "sourceUrl": "https://huggingface.co/datasets/dsfsi-anv/za-african-next-voices",
+      "license": "CC BY 4.0 with TTS/voice-cloning restriction",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["zu", "st", "xh", "tn", "ts", "nr", "ve"],
+      "modalities": ["audio", "text"],
+      "task": "asr_transcript",
+      "attribution": {
+        "publisher": "DSFSI-ANV",
+        "upstream": "Swivuriso"
+      },
+      "notes": [
+        "Requires accepting Hugging Face conditions.",
+        "Use is restricted to ASR/inclusive speech technology; do not use for TTS, voice cloning, or voice synthesis."
+      ]
+    },
+    {
+      "id": "hf-digitalumuganda-kinyarwanda-en-mt",
+      "name": "Kinyarwanda-English Machine Translation Dataset",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "external_with_attribution_after_adapter_fix",
+      "adapter": "manual",
+      "sourceUrl": "https://huggingface.co/datasets/DigitalUmuganda/kinyarwanda-english-machine-translation-dataset",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "languages": ["rw", "en"],
+      "modalities": ["text"],
+      "task": "parallel_translation",
+      "attribution": {
+        "publisher": "Digital Umuganda"
+      },
+      "notes": [
+        "Hugging Face rows generation currently fails with an upstream encoding error; import from source files after conversion."
+      ]
+    },
+    {
+      "id": "wikimedia-african-language-dumps",
+      "name": "Wikimedia dumps for African-language projects",
+      "status": "share_alike_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "share_alike_review_required",
+      "adapter": "manual",
+      "sourceUrl": "https://dumps.wikimedia.org/",
+      "license": "CC BY-SA 4.0 / GFDL, with project-specific exceptions",
+      "licenseUrl": "https://dumps.wikimedia.org/legal.html",
+      "languages": ["af", "am", "ar", "ha", "ig", "rw", "so", "sw", "tn", "xh", "yo", "zu"],
+      "modalities": ["text"],
+      "task": "encyclopedic_text",
+      "attribution": {
+        "publisher": "Wikimedia Foundation"
+      },
+      "notes": [
+        "Share-alike requirements may affect saleable derived datasets; keep separate until legal/product review."
+      ]
+    },
+    {
+      "id": "tatoeba-african-language-sentences",
+      "name": "Tatoeba African-language sentences and translations",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "external_with_attribution_after_filtering",
+      "adapter": "manual",
+      "sourceUrl": "https://tatoeba.org/downloads",
+      "license": "CC BY 2.0 FR for text sentences",
+      "licenseUrl": "https://en.wiki.tatoeba.org/articles/show/using-the-tatoeba-corpus",
+      "languages": ["af", "ar", "ha", "kab", "sw", "yo", "zu"],
+      "modalities": ["text"],
+      "task": "sentence_pairs",
+      "attribution": {
+        "publisher": "Tatoeba"
+      },
+      "notes": [
+        "Text and audio have different license postures; import text only unless audio licenses are verified per contributor."
+      ]
+    },
+    {
+      "id": "african-storybook",
+      "name": "African Storybook open story corpus",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "per_story_license_review",
+      "adapter": "manual",
+      "sourceUrl": "https://www.africanstorybook.org/",
+      "license": "Open licenses vary by story",
+      "licenseUrl": "https://www.africanstorybook.org/terms.html",
+      "languages": ["af", "am", "ha", "ig", "rw", "st", "sw", "tn", "xh", "yo", "zu"],
+      "modalities": ["text"],
+      "task": "story_text",
+      "attribution": {
+        "publisher": "African Storybook"
+      },
+      "notes": [
+        "Do not bulk import until each story license and attribution block is captured."
+      ]
+    },
+    {
+      "id": "openlanguagedata-flores-plus",
+      "name": "FLORES+",
+      "status": "evaluation_only",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "not_for_training",
+      "adapter": "manual",
+      "sourceUrl": "https://huggingface.co/datasets/openlanguagedata/flores_plus",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "languages": ["afr", "amh", "bam", "bem", "dik", "dyu", "ewe", "fon", "fuv", "hau", "ibo", "kin", "sot", "sna", "swh", "tsn", "xho", "yor", "zul"],
+      "modalities": ["text"],
+      "task": "translation_evaluation",
+      "attribution": {
+        "publisher": "Open Language Data Initiative"
+      },
+      "notes": [
+        "Dataset card says it is intended for evaluation and should not be used as training data."
+      ]
+    },
+    {
+      "id": "masakhane-masakhaner",
+      "name": "MasakhaNER / MasakhaNER 2.0",
+      "status": "restricted",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "noncommercial_not_saleable",
+      "adapter": "manual",
+      "sourceUrl": "https://github.com/masakhane-io/masakhane-ner",
+      "license": "CC BY-NC 4.0 for NER dataset; monolingual data varies",
+      "licenseUrl": "https://github.com/masakhane-io/masakhane-ner",
+      "languages": ["am", "ha", "ig", "rw", "lg", "luo", "pcm", "sw", "wo", "yo", "bm", "ee", "fon", "tw", "ny", "sn", "xh", "zu"],
+      "modalities": ["text"],
+      "task": "named_entity_recognition",
+      "attribution": {
+        "publisher": "Masakhane"
+      },
+      "notes": [
+        "Non-commercial license means it cannot enter Pandora's externally distributed/saleable model_training corpus."
+      ]
+    },
+    {
+      "id": "hf-dsfsi-setswana-sentiment",
+      "name": "DSFSI Setswana Sentiment",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "license_review_required",
+      "adapter": "hf_rows",
+      "dataset": "dsfsi/setswana-sentiment",
+      "config": "default",
+      "split": "train",
+      "sourceUrl": "https://huggingface.co/datasets/dsfsi/setswana-sentiment",
+      "license": "NOODL / other as currently shown on dataset card",
+      "languages": ["tn"],
+      "modalities": ["text"],
+      "task": "sentiment_classification",
+      "fields": {
+        "include": ["text", "consensus_label", "label_id"]
+      },
+      "attribution": {
+        "publisher": "Data Science for Social Impact"
+      },
+      "notes": [
+        "Earlier discovery showed CC BY metadata, but the current dataset card says NOODL. Hold until the publisher clarifies."
+      ]
+    },
+    {
+      "id": "opus-african-language-subcorpora",
+      "name": "OPUS African-language subcorpora",
+      "status": "candidate_review",
+      "approvedForModelTraining": false,
+      "allowedDistribution": "subcorpus_license_review",
+      "adapter": "manual",
+      "sourceUrl": "https://opus.nlpl.eu/",
+      "license": "Varies by subcorpus",
+      "languages": ["af", "am", "ha", "ig", "rw", "so", "sw", "tn", "xh", "yo", "zu"],
+      "modalities": ["text"],
+      "task": "parallel_translation",
+      "attribution": {
+        "publisher": "OPUS"
+      },
+      "notes": [
+        "OPUS is a catalogue/processor of open parallel data; approve individual subcorpora only after license review."
+      ]
+    }
+  ]
+}

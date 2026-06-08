@@ -13,7 +13,8 @@
   ],
   "pandoraScope": "model_training",
   "distributableCandidate": true,
-  "importStatus": "candidate_source_manifest",
+  "importStatus": "approved_hf_rows_import",
+  "registry": "datasets/sources/african-open-corpora.json",
   "requiredAttribution": [
     "Dataset: michsethowusu/english-setswana_sentence-pairs_mt560",
     "Original source: OPUS MT560",
