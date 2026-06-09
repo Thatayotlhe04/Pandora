@@ -39,3 +39,32 @@ window.addEventListener('scroll', () => {
   lastScrolled = scrolled;
   header?.classList.toggle('is-scrolled', scrolled);
 }, { passive: true });
+
+const cookieBanner = document.querySelector('.cookie-banner');
+const acceptCookies = document.querySelector('.cookie-accept');
+const rejectCookies = document.querySelector('.cookie-reject');
+const cookieChoiceKey = 'pandora_cookie_choice';
+
+try {
+  const existingChoice = localStorage.getItem(cookieChoiceKey);
+  if (!existingChoice) {
+    requestAnimationFrame(() => cookieBanner?.classList.add('is-visible'));
+  } else {
+    document.documentElement.dataset.cookieChoice = existingChoice;
+  }
+} catch {
+  requestAnimationFrame(() => cookieBanner?.classList.add('is-visible'));
+}
+
+acceptCookies?.addEventListener('click', () => setCookieChoice('accepted'));
+rejectCookies?.addEventListener('click', () => setCookieChoice('rejected'));
+
+function setCookieChoice(choice) {
+  try {
+    localStorage.setItem(cookieChoiceKey, choice);
+  } catch {
+    // Browsers can block storage; still hide the banner for the current page.
+  }
+  document.documentElement.dataset.cookieChoice = choice;
+  cookieBanner?.classList.remove('is-visible');
+}
