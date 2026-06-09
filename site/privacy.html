@@ -11,25 +11,25 @@
       <a href="./index.html">Back to Pandora</a>
       <h1>Privacy Policy</h1>
       <p>
-        Pandora collects platform events, AI interaction events, and approved
-        public-corpus records to operate products, improve reliability, and build
-        model-training datasets where the user has not opted out.
+        Pandora collects platform events, AI interaction events, partner-provided
+        records, and approved public-source records to operate data infrastructure
+        that improves AI output through the Pandora SDK and API.
       </p>
-      <h2>Consent Scopes</h2>
+      <h2>Scopes</h2>
       <p>
-        `product_improvement` is internal metadata only. `model_training` is
-        default-on and may include content for Atlas training or externally
-        distributable datasets unless a user opts out.
+        <code>product_improvement</code> is internal operational metadata.
+        <code>model_training</code> is default-on and may include eligible content
+        for externally distributable datasets unless a user opts out.
       </p>
       <h2>Opt Out</h2>
       <p>
-        Users can opt out of `model_training` at any time. Once opted out, SDKs
-        stop sending model-training events for that user and ingestion respects
-        the consent boundary.
+        Users can opt out of <code>model_training</code> at any time. Once opted
+        out, SDKs stop sending model-training events for that user and ingestion
+        respects the consent boundary.
       </p>
-      <h2>Public Corpora</h2>
+      <h2>Public Sources</h2>
       <p>
-        Public-corpus records retain source IDs, upstream URLs, license names,
+        Public-source records retain source IDs, upstream URLs, license names,
         attribution fields, and import provenance so downstream dataset cards can
         explain exactly where each row came from.
       </p>
