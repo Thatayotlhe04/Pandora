@@ -42,5 +42,15 @@
         <a href="mailto:legal@pandora.local">legal@pandora.local</a>.
       </p>
     </main>
+    <script>
+      document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+        a.addEventListener('click', function (ev) {
+          if (ev.metaKey || ev.ctrlKey || a.target === '_blank') return;
+          ev.preventDefault();
+          document.body.classList.add('leaving');
+          setTimeout(function () { location.href = a.getAttribute('href'); }, 400);
+        });
+      });
+    </script>
   </body>
 </html>
