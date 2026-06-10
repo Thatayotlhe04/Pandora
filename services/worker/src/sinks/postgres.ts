@@ -29,7 +29,3 @@ export async function insertEvents(events: EventEnvelope[]): Promise<void> {
   if (error) throw new Error(`events upsert failed: ${error.message}`);
 }
 
-/** Single-event convenience (delegates to the batched path). */
-export async function insertEvent(e: EventEnvelope): Promise<void> {
-  await insertEvents([e]);
-}

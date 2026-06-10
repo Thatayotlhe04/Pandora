@@ -256,3 +256,10 @@ export function track(input: TrackInput): Promise<boolean> {
 export function flush(): Promise<void> {
   return singleton ? singleton.flush() : Promise.resolve();
 }
+
+export function close(): Promise<void> {
+  if (!singleton) return Promise.resolve();
+  const s = singleton;
+  singleton = null;
+  return s.close();
+}

@@ -172,8 +172,8 @@ within that window — fast enough to honour, cheap enough to scale.
 Flush in-flight events when a process exits:
 
 ```ts
-import { flush } from '@pandora/tracker';
-process.on('SIGTERM', async () => { await flush(); process.exit(0); });
+import { close } from '@pandora/tracker';
+process.on('SIGTERM', async () => { await close(); process.exit(0); });
 ```
 
 That's the whole integration. Once all five are emitting, the lake fills, and the

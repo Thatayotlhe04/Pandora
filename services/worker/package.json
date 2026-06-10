@@ -9,7 +9,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.621.0",
     "@dsnp/parquetjs": "^1.8.0",
     "@pandora/core": "*",
     "@pandora/schema": "*",

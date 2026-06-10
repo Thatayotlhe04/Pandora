@@ -10,7 +10,6 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "resolveJsonModule": true,
-    "noUncheckedIndexedAccess": false,
     "types": ["node"]
   }
 }
