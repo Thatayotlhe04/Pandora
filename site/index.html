@@ -349,10 +349,6 @@ h2{font-size:2.2rem!important;line-height:1.1}
 </div>
 <div class="demo-stage rv">
 <canvas id="demoCanvas"></canvas>
-<div class="demo-counter">
-<span><span class="label">Events/sec</span> <span class="val" id="demoEps">847</span></span>
-<span><span class="label">Accepted</span> <span class="val">99.7%</span></span>
-</div>
 </div>
 </div>
 </section>
@@ -575,8 +571,8 @@ drawDemo();
 
 setInterval(()=>{
 const v=Math.floor(780+Math.random()*340);
-document.getElementById('demoEps').textContent=v;
-document.getElementById('hero3dEps').textContent=v+' ev/s';
+const he=document.getElementById('hero3dEps');
+if(he)he.textContent=v+' ev/s';
 },1400);
 </script>
 </body>
